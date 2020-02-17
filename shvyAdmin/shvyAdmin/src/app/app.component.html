@@ -1,0 +1,36 @@
+<div class="main-container">
+<div class="main-container-1">
+<div class="playing-song">
+    <div class="selected_song_img">
+        <img class="selected_img" src={{this.selectSong.albumCover}}>
+    </div>
+    <div class="progress_bar">
+        <audio controls="controls" id="audio" src={{this.selectSong.file}} autoplay={{this.play_song}}>
+        </audio>
+    </div>
+    <!-- <div class="btns">
+        <i class="fa fa-random" aria-hidden="true"></i>
+        <i class="fa fa-step-backward" aria-hidden="true"></i>
+        <i class="fa fa-play-circle circle" *ngIf="this.play" (click)="playSong()" aria-hidden="true"></i>
+        <i class="fa fa-pause-circle circle" *ngIf="!this.play" (click)="playSong()" aria-hidden="true"></i>
+        <i class="fa fa-step-forward" aria-hidden="true"></i>
+        <i class="fa fa-repeat" aria-hidden="true"></i>
+    </div> -->
+<h5>{{this.selectSong.track}}</h5>
+</div>
+<div class="songs-list">
+<div *ngFor="let songs of playLists" class="songs-list-1" (click)= "selectedSong(songs)">
+    <div class="App_PlaylistCard">
+        <div class="card-header">
+            <img src={{songs.albumCover}} />
+        </div>
+        <div class="card-body">
+        <h5>{{songs.track}}</h5>
+        <p>{{songs.artist}}</p>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+</div>
